@@ -5,19 +5,19 @@ import Card from './Card'
 function CardContainer() {
 
     const shuffleCards = (cards) => {
-        for (let i = cards.length - 1; i > 0; i--) {
+        let copyCards = [...cards];
+
+        for (let i = copyCards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
 
-            [cards[i], cards[j]] = [cards[j], cards[i]];
+            [copyCards[i], copyCards[j]] = [copyCards[j], copyCards[i]];
         }
+
+        return copyCards;
     }
 
     const triggerShuffle = () => {
-        let copyCards = [...cardArray];
-
-        shuffleCards(copyCards);
-
-        setCards([...copyCards]);
+        setCards([...shuffleCards(cardArray)]);
     }
 
     const makeCards = () => {
@@ -29,9 +29,7 @@ function CardContainer() {
             tempCards.push(<Card key={i} test={i + 1} trigger={triggerShuffle} />);
         }
 
-        shuffleCards(tempCards);
-
-        return tempCards;
+        return shuffleCards(tempCards);
     }
 
     let [cardArray, setCards] = useState(makeCards());
