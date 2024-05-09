@@ -33,11 +33,17 @@ function CardContainer() {
     }
 
     let [cardArray, setCards] = useState(makeCards());
+    let score = 0;
+    let highScore = 0;
 
     return (
-        <div className="card-container">
-            {cardArray}
-        </div>
+        <>
+            <p>Score: {score}</p>
+            <p>High Score: {highScore}</p>
+            <div className="card-container">
+                {cardArray}
+            </div>
+        </>
     )
 }
 
