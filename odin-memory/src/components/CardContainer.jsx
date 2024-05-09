@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from './Card'
 
 function CardContainer() {
@@ -37,23 +37,54 @@ function CardContainer() {
         });
     }
 
-    const makeCards = () => {
-        const cardNumber = 5;
-
+    const makeCards = (cardData) => {
         let tempCards = [];
 
-        for (let i = 0; i < cardNumber; i++) {
+        for (let i = 0; i < cardData.length; i++) {
             tempCards.push(
-                <Card key={i + 1} identifier={i + 1} trigger={triggerShuffle} />
+                <Card key={i + 1} identifier={i + 1} trigger={triggerShuffle} name={cardData[i].name} image={cardData[i].image} />
             );
         }
 
         return shuffleCards(tempCards);
     }
 
-    let [gameInfo, setGame] = useState(
-        { score: 0, highScore: 0, cardsClicked: [""], cardArray: makeCards() }
-    );
+    const fetchData = async (cardNumber) => {
+        const cardData = [];
+
+        for (let i = 0; i < cardNumber; i++) {
+            const randomId = Math.ceil(Math.random() * 300);
+
+            const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+
+            const resultJSON = await fetchResult.json();
+
+            cardData.push({
+                name: resultJSON.name,
+                image: resultJSON.sprites.front_default
+            });
+        }
+
+        return cardData;
+    }
+
+    const numberOfCards = 12;
+
+    let [gameInfo, setGame] = useState({
+        score: 0,
+        highScore: 0,
+        cardsClicked: [""],
+        cardArray: []
+    });
+
+    useEffect(() => {
+        fetchData(numberOfCards).then(data => {
+            setGame((oldInfo) => ({
+                ...oldInfo,
+                cardArray: makeCards(data)
+            }));
+        });
+    }, []);
 
     return (
         <>

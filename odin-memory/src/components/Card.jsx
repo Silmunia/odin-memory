@@ -1,14 +1,16 @@
 
 import '../styles/Shared.css'
 
-function Card({ identifier, trigger }) {
+function Card({ identifier, trigger, name, image }) {
+
+    const uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
 
     return (
-        <div onClick={(event) => trigger(event.target.id)}
+        <div onClick={() => trigger(identifier)}
             className="card" id={identifier}
         >
-            <img></img>
-            <h2>Card {identifier}</h2>
+            <img src={image}></img>
+            <h2>{uppercaseName}</h2>
         </div>
     )
 }
