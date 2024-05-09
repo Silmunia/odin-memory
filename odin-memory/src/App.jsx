@@ -1,13 +1,13 @@
 
 import './App.css'
-import Card from './components/Card'
+import CardContainer from './components/CardContainer'
 
 function App() {
 
   return (
     <>
       <h1>Odin Memory</h1>
-      <Card />
+      <CardContainer />
     </>
   )
 }
