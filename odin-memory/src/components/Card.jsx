@@ -6,7 +6,7 @@ function Card({ identifier, trigger, name, image }) {
     const uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
 
     return (
-        <div onClick={(event) => trigger(event.target.id)}
+        <div onClick={() => trigger(identifier)}
             className="card" id={identifier}
         >
             <img src={image}></img>

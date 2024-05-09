@@ -53,7 +53,7 @@ function CardContainer() {
         const cardData = [];
 
         for (let i = 0; i < cardNumber; i++) {
-            const randomId = Math.floor(Math.random() * 300);
+            const randomId = Math.ceil(Math.random() * 300);
 
             const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
 
@@ -79,12 +79,10 @@ function CardContainer() {
 
     useEffect(() => {
         fetchData(numberOfCards).then(data => {
-            setGame({
-                score: 0,
-                highScore: 0,
-                cardsClicked: [""],
+            setGame((oldInfo) => ({
+                ...oldInfo,
                 cardArray: makeCards(data)
-            });
+            }));
         });
     }, []);
 
