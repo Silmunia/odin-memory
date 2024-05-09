@@ -1,11 +1,12 @@
 
 import '../styles/Shared.css'
 
-function Card() {
+function Card({ test, trigger }) {
+
     return (
-        <div className="card">
+        <div onClick={trigger} className="card">
             <img></img>
-            <h2>Card Name</h2>
+            <h2>Card {test}</h2>
         </div>
     )
 }
