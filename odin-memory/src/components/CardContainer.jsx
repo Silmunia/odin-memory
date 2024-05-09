@@ -37,9 +37,7 @@ function CardContainer() {
         });
     }
 
-    const makeCards = () => {
-        const cardNumber = 5;
-
+    const makeCards = (cardNumber) => {
         let tempCards = [];
 
         for (let i = 0; i < cardNumber; i++) {
@@ -51,9 +49,13 @@ function CardContainer() {
         return shuffleCards(tempCards);
     }
 
-    let [gameInfo, setGame] = useState(
-        { score: 0, highScore: 0, cardsClicked: [""], cardArray: makeCards() }
-    );
+    const numberOfCards = 9;
+    let [gameInfo, setGame] = useState({
+        score: 0,
+        highScore: 0,
+        cardsClicked: [""],
+        cardArray: makeCards(numberOfCards)
+    });
 
     return (
         <>
