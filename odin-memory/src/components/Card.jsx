@@ -1,12 +1,14 @@
 
 import '../styles/Shared.css'
 
-function Card({ test, trigger }) {
+function Card({ identifier, trigger }) {
 
     return (
-        <div onClick={trigger} className="card">
+        <div onClick={(event) => trigger(event.target.id)}
+            className="card" id={identifier}
+        >
             <img></img>
-            <h2>Card {test}</h2>
+            <h2>Card {identifier}</h2>
         </div>
     )
 }

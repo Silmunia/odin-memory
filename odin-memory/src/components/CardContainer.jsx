@@ -16,8 +16,25 @@ function CardContainer() {
         return copyCards;
     }
 
-    const triggerShuffle = () => {
-        setCards([...shuffleCards(cardArray)]);
+    const triggerShuffle = (cardIdentifier) => {
+        setGame((oldInfo) => {
+            if (oldInfo.cardsClicked.includes(cardIdentifier)) {
+                return ({
+                    score: 0,
+                    highScore: oldInfo.score > oldInfo.highScore
+                        ? oldInfo.score : oldInfo.highScore,
+                    cardsClicked: [],
+                    cardArray: shuffleCards(oldInfo.cardArray)
+                });
+            } else {
+                return ({
+                    score: oldInfo.score + 1,
+                    highScore: oldInfo.highScore,
+                    cardsClicked: [...oldInfo.cardsClicked, cardIdentifier],
+                    cardArray: shuffleCards(oldInfo.cardArray)
+                });
+            }
+        });
     }
 
     const makeCards = () => {
@@ -26,22 +43,24 @@ function CardContainer() {
         let tempCards = [];
 
         for (let i = 0; i < cardNumber; i++) {
-            tempCards.push(<Card key={i} test={i + 1} trigger={triggerShuffle} />);
+            tempCards.push(
+                <Card key={i + 1} identifier={i + 1} trigger={triggerShuffle} />
+            );
         }
 
         return shuffleCards(tempCards);
     }
 
-    let [cardArray, setCards] = useState(makeCards());
-    let score = 0;
-    let highScore = 0;
+    let [gameInfo, setGame] = useState(
+        { score: 0, highScore: 0, cardsClicked: [""], cardArray: makeCards() }
+    );
 
     return (
         <>
-            <p>Score: {score}</p>
-            <p>High Score: {highScore}</p>
+            <p>Score: {gameInfo.score}</p>
+            <p>High Score: {gameInfo.highScore}</p>
             <div className="card-container">
-                {cardArray}
+                {gameInfo.cardArray}
             </div>
         </>
     )
