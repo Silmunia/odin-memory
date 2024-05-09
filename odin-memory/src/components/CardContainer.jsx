@@ -44,7 +44,7 @@ function CardContainer() {
 
         for (let i = 0; i < cardNumber; i++) {
             tempCards.push(
-                <Card key={i + 1} identifier={i + 1} trigger={triggerShuffle} />
+                <Card key={i + 1} identifier={i + 1} trigger={triggerShuffle} name="Jolteon" image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png" />
             );
         }
 
