@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Pokemon Solid";
+    src: url("../fonts/Pokemon Solid.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/BarlowCondensed-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    font-size: 62.5%;
+    --poke-blue: rgb(51, 98, 162);
+    --poke-yellow: rgb(251, 204, 4);
+    --poke-red: rgb(240, 0, 0);
+    --poke-white: rgb(240, 240, 240);
+    --poke-black: rgb(34, 34, 36);
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Pokemon Solid", serif;
+    font-size: 10rem;
+    -webkit-text-stroke: 4px var(--poke-blue);
+    color: var(--poke-yellow);
+}
+
+h2 {
+    margin: 0;
+    font-family: "Pokemon Solid", serif;
+    font-size: 3.75rem;
+    -webkit-text-stroke: 2px var(--poke-blue);
+    color: var(--poke-yellow);
+}
+
+p {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.5rem;
+}

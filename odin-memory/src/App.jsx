@@ -1,5 +1,5 @@
 
-import './App.css'
+import '../src/styles/StyleSettings.css'
 import CardContainer from './components/CardContainer'
 
 function App() {
