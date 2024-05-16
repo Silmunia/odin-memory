@@ -41,7 +41,7 @@
 
 <img src="./odin-memory/src/assets/PageScreenshot.png" alt="Poké-Memory Screenshot">
 
-Poké-Memory is a simple game made with React as part of the curriculum presented by [The Odin Project](https://www.theodinproject.com/). The game itself consists of attempting to click each image only once and uses the [Pokémon API](https://pokeapi.co/) as a source of random images.
+Poké-Memory is a simple game made with React as part of the curriculum presented by [The Odin Project](https://www.theodinproject.com/), specifically for [the Memory Card project](https://www.theodinproject.com/lessons/node-path-react-new-memory-card). The game itself consists of attempting to click each image only once and uses the [Pokémon API](https://pokeapi.co/) as a source of random images.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
