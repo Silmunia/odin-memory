@@ -1,7 +1,8 @@
 
-import { useEffect, useState } from 'react';
 import '../styles/CardContainer.css'
+import { useEffect, useState } from 'react';
 import Card from './Card'
+import DataService from '../services/DataService';
 
 function CardContainer() {
 
@@ -51,46 +52,6 @@ function CardContainer() {
         return shuffleCards(tempCards);
     }
 
-    const makeRandomIds = (quantity) => {
-        const identifierArray = [];
-
-        while (identifierArray.length < quantity) {
-            const randomId = Math.ceil(Math.random() * 493);
-
-            if (identifierArray.includes(randomId)) {
-                continue;
-            }
-
-            identifierArray.push(randomId);
-        }
-
-        return identifierArray;
-    }
-
-    const fetchData = async (cardNumber) => {
-        const cardData = [];
-
-        const cardIdentifiers = makeRandomIds(cardNumber);
-
-        for (let i = 0; i < cardNumber; i++) {
-            const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${cardIdentifiers[i]}`);
-
-            if (fetchResult.status != 200) {
-                setFeedback("Unable to show images!");
-                return [];
-            }
-
-            const resultJSON = await fetchResult.json();
-
-            cardData.push({
-                name: resultJSON.name,
-                image: resultJSON.sprites.front_default
-            });
-        }
-
-        return cardData;
-    }
-
     const numberOfCards = 12;
     let [feedbackMessage, setFeedback] = useState("Loading");
 
@@ -102,10 +63,16 @@ function CardContainer() {
     });
 
     useEffect(() => {
-        fetchData(numberOfCards).then(data => {
+        const dataService = new DataService();
+
+        dataService.fetchData(numberOfCards).then(dataArray => {
+            if (dataArray.length < numberOfCards) {
+                setFeedback("Unable to show images!");
+            }
+
             setGame((oldInfo) => ({
                 ...oldInfo,
-                cardArray: makeCards(data)
+                cardArray: makeCards(dataArray)
             }));
         });
     }, []);
