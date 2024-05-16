@@ -3,7 +3,14 @@ import { useState } from 'react';
 
 function StarterGuide() {
 
-    let [dialogIsOpen, setDialog] = useState(true);
+    const DIALOG_KEY = "DIALOG_KEY";
+    const dialogSettings = localStorage.getItem(DIALOG_KEY) ?? true;
+
+    let [dialogIsOpen, setDialog] = useState(Boolean(dialogSettings));
+
+    const setDialogDisplay = (checkbox) => {
+        localStorage.setItem(DIALOG_KEY, checkbox.checked ? "" : "true");
+    }
 
     return (
         <>
@@ -17,7 +24,10 @@ function StarterGuide() {
                         <li>Reloading the page will make cards with different Pokémon.</li>
                         <li>Go for the high score!</li>
                     </ol>
-                    <button onClick={() => { setDialog(false) }}>Play!</button>
+                    <div className="dialog-input">
+                        <label><input type="checkbox" onChange={(event) => setDialogDisplay(event.target)}></input>Do not show this message again</label>
+                        <button onClick={() => { setDialog(false) }}>Play!</button>
+                    </div>
                 </form>
             </dialog>
         </>
