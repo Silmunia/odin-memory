@@ -6,7 +6,10 @@ function App() {
 
   return (
     <>
-      <h1>Poké-Memory</h1>
+      <header>
+        <h1>Poké-Memory</h1>
+        <h2>Gotta remember 'em all!</h2>
+      </header>
       <CardContainer />
     </>
   )

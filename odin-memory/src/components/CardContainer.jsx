@@ -89,11 +89,18 @@ function CardContainer() {
 
     return (
         <>
-            <p>Score: {gameInfo.score}</p>
-            <p>High Score: {gameInfo.highScore}</p>
-            <div className="card-container">
-                {gameInfo.cardArray}
-            </div>
+            <main>
+                <section className="score-container">
+                    <p>Score: {gameInfo.score}</p>
+                    <p>High Score: {gameInfo.highScore}</p>
+                </section>
+                <section className="card-container">
+                    {gameInfo.cardArray}
+                </section>
+            </main>
+            <footer>
+                <p>Source code available at <a href="https://github.com/Silmunia/odin-memory">Github</a></p>
+            </footer>
         </>
     )
 }

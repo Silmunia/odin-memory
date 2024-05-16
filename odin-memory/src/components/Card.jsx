@@ -10,7 +10,7 @@ function Card({ identifier, trigger, name, image }) {
             className="card" id={identifier}
         >
             <img src={image}></img>
-            <h2>{uppercaseName}</h2>
+            <h3>{uppercaseName}</h3>
         </div>
     )
 }
