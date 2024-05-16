@@ -18,6 +18,7 @@ function CardContainer() {
     }
 
     const triggerShuffle = (cardIdentifier) => {
+        window.scrollTo(0, 0);
         setGame((oldInfo) => {
             if (oldInfo.cardsClicked.includes(cardIdentifier)) {
                 return ({
@@ -50,13 +51,34 @@ function CardContainer() {
         return shuffleCards(tempCards);
     }
 
+    const makeRandomIds = (quantity) => {
+        const identifierArray = [];
+
+        while (identifierArray.length < quantity) {
+            const randomId = Math.ceil(Math.random() * 493);
+
+            if (identifierArray.includes(randomId)) {
+                continue;
+            }
+
+            identifierArray.push(randomId);
+        }
+
+        return identifierArray;
+    }
+
     const fetchData = async (cardNumber) => {
         const cardData = [];
 
-        for (let i = 0; i < cardNumber; i++) {
-            const randomId = Math.ceil(Math.random() * 300);
+        const cardIdentifiers = makeRandomIds(cardNumber);
 
-            const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+        for (let i = 0; i < cardNumber; i++) {
+            const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${cardIdentifiers[i]}`);
+
+            if (fetchResult.status != 200) {
+                setFeedback("Unable to show images!");
+                return [];
+            }
 
             const resultJSON = await fetchResult.json();
 
@@ -70,6 +92,7 @@ function CardContainer() {
     }
 
     const numberOfCards = 12;
+    let [feedbackMessage, setFeedback] = useState("Loading");
 
     let [gameInfo, setGame] = useState({
         score: 0,
@@ -94,7 +117,10 @@ function CardContainer() {
                 <p>High Score: {gameInfo.highScore}</p>
             </section>
             <section className="card-container">
-                {gameInfo.cardArray}
+                {gameInfo.cardArray.length > 0
+                    ? gameInfo.cardArray
+                    : (<h3 className="message-label">{feedbackMessage}</h3>)
+                }
             </section>
         </>
     )
