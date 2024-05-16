@@ -18,6 +18,7 @@ function CardContainer() {
     }
 
     const triggerShuffle = (cardIdentifier) => {
+        window.scrollTo(0, 0);
         setGame((oldInfo) => {
             if (oldInfo.cardsClicked.includes(cardIdentifier)) {
                 return ({

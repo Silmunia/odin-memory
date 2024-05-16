@@ -9,6 +9,6 @@
 }
 
 .message-label {
-    font-size: clamp(8rem, 10vw, 10rem);
-    -webkit-text-stroke: clamp(2px, 1vw, 4px) var(--poke-blue);
+    font-size: clamp(5.5rem, 10vw, 10rem);
+    -webkit-text-stroke: clamp(2px, 0.2vw, 4px) var(--poke-blue);
 }
