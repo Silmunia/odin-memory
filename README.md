@@ -19,8 +19,6 @@
   <p align="center">
     Learning project as part of The Odin Project's curriculum. 
     <br />
-    <a href="https://github.com/Silmunia/odin-memory"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://odincards.netlify.app/">View Demo</a>
   </p>
@@ -46,9 +44,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="./odin-memory/src/assets/PageScreenshot.png" alt="Poké-Memory Screenshot">
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Poké-Memory is a simple game made with React as part of the curriculum presented by [The Odin Project](https://www.theodinproject.com/). The game itself consists of attempting to click each image only once and uses the [Pokémon API](https://pokeapi.co/) as a source of random images.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,7 +81,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [stars-shield]: https://img.shields.io/github/stars/Silmunia/odin-memory.svg?style=for-the-badge
 [stars-url]: https://github.com/Silmunia/odin-memory/stargazers
 [license-shield]: https://img.shields.io/github/license/Silmunia/odin-memory.svg?style=for-the-badge
-[license-url]: https://github.com/Silmunia/odin-memory/blob/master/LICENSE.txt
+[license-url]: https://github.com/Silmunia/odin-memory/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
