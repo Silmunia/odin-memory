@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Pokemon Solid";
+    src: url("../fonts/Pokemon Solid.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/BarlowCondensed-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: auto;
+}
+
+p {
+    font-family: "Barlow Condensed";
+    font-size: 22px;
+    margin: 0;
+}

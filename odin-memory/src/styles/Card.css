@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Pokemon Solid";
+    src: url("../fonts/Pokemon Solid.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card {
+    background-color: red;
+    padding: 10px;
+    height: 175px;
+    width: 175px;
+}
+
+.card h2 {
+    margin: 0px;
+    font-family: "Pokemon Solid";
+    font-size: 28px;
+}
+
+.card img {
+    height: 70%;
+    width: 70%;
+}

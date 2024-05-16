@@ -1,5 +1,5 @@
 
-import '../styles/Shared.css'
+import '../styles/Card.css'
 
 function Card({ identifier, trigger, name, image }) {
 
