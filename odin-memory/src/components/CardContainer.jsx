@@ -78,6 +78,10 @@ function CardContainer() {
         cardArray: []
     });
 
+    const loadingPanel = (
+        <h3 className="loading-label">Loading</h3>
+    );
+
     useEffect(() => {
         fetchData(numberOfCards).then(data => {
             setGame((oldInfo) => ({
@@ -94,7 +98,10 @@ function CardContainer() {
                 <p>High Score: {gameInfo.highScore}</p>
             </section>
             <section className="card-container">
-                {gameInfo.cardArray}
+                {gameInfo.cardArray.length > 0
+                    ? gameInfo.cardArray
+                    : loadingPanel
+                }
             </section>
         </>
     )
