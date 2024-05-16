@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+import '../styles/CardContainer.css'
 import Card from './Card'
 
 function CardContainer() {
@@ -88,11 +89,13 @@ function CardContainer() {
 
     return (
         <>
-            <p>Score: {gameInfo.score}</p>
-            <p>High Score: {gameInfo.highScore}</p>
-            <div className="card-container">
+            <section className="score-container">
+                <p>Score: {gameInfo.score}</p>
+                <p>High Score: {gameInfo.highScore}</p>
+            </section>
+            <section className="card-container">
                 {gameInfo.cardArray}
-            </div>
+            </section>
         </>
     )
 }
