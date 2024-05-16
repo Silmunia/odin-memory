@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-.loading-label {
+.message-label {
     font-size: clamp(8rem, 10vw, 10rem);
     -webkit-text-stroke: clamp(2px, 1vw, 4px) var(--poke-blue);
 }

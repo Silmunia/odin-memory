@@ -58,6 +58,11 @@ function CardContainer() {
 
             const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
 
+            if (fetchResult.status != 200) {
+                setFeedback("Unable to show images!");
+                return [];
+            }
+
             const resultJSON = await fetchResult.json();
 
             cardData.push({
@@ -70,6 +75,7 @@ function CardContainer() {
     }
 
     const numberOfCards = 12;
+    let [feedbackMessage, setFeedback] = useState("Loading");
 
     let [gameInfo, setGame] = useState({
         score: 0,
@@ -77,10 +83,6 @@ function CardContainer() {
         cardsClicked: [""],
         cardArray: []
     });
-
-    const loadingPanel = (
-        <h3 className="loading-label">Loading</h3>
-    );
 
     useEffect(() => {
         fetchData(numberOfCards).then(data => {
@@ -100,7 +102,7 @@ function CardContainer() {
             <section className="card-container">
                 {gameInfo.cardArray.length > 0
                     ? gameInfo.cardArray
-                    : loadingPanel
+                    : (<h3 className="message-label">{feedbackMessage}</h3>)
                 }
             </section>
         </>
