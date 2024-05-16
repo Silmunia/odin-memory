@@ -13,6 +13,14 @@
 }
 
 :root {
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     font-size: 62.5%;
     --poke-blue: rgb(51, 98, 162);
     --poke-yellow: rgb(251, 204, 4);
@@ -24,6 +32,13 @@
     padding: 2rem;
     text-align: center;
     background-image: url("../assets/Background Tile.svg");
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
 }
 
 h1 {
@@ -46,4 +61,5 @@ p {
     margin: 0;
     font-family: "Barlow Condensed", sans-serif;
     font-size: 2.5rem;
+    color: var(--poke-white);
 }
