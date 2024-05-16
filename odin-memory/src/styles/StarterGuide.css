@@ -1,0 +1,51 @@
+@import url('./StyleSettings.css');
+
+.dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(5, 5, 5);
+    opacity: 0.85;
+}
+
+dialog {
+    position: fixed;
+    top: 30%;
+    margin: auto;
+    background-color: var(--poke-white);
+    border: 8px solid var(--poke-black);
+    border-radius: 22px;
+    padding: 1% 4%;
+    opacity: 1.0;
+}
+
+dialog ol {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2rem;
+    color: var(--poke-black);
+}
+
+dialog button {
+    font-family: "Pokemon Solid", serif;
+    color: var(--poke-yellow);
+    font-size: clamp(2.25rem, 2vw, 3.5rem);
+    -webkit-text-stroke: clamp(1px, 0.1vw, 2px) var(--poke-blue);
+    background-color: var(--poke-white);
+    border: 3px solid var(--poke-black);
+    border-radius: 8px;
+    padding: 1% 2%;
+}
+
+dialog button:focus {
+    border: 2px solid var(--poke-blue);
+}
+
+dialog button:active {
+    border: 2px solid var(--poke-black);
+    background-color: var(--poke-black);
+}

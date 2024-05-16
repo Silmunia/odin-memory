@@ -1,11 +1,13 @@
 
 import '../src/styles/StyleSettings.css'
 import CardContainer from './components/CardContainer'
+import StarterGuide from './components/StarterGuide'
 
 function App() {
 
   return (
     <>
+      <StarterGuide />
       <header>
         <h1>Poké-Memory</h1>
         <h2>Gotta remember 'em all!</h2>
