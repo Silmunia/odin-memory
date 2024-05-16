@@ -12,6 +12,12 @@
     font-style: normal;
 }
 
+#react-root {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
 :root {
     line-height: 1.5;
     font-weight: 400;
@@ -37,8 +43,6 @@
 body {
     margin: 0;
     display: flex;
-    place-items: center;
-    min-width: 320px;
 }
 
 footer,
@@ -63,6 +67,7 @@ footer a {
 .score-container {
     display: flex;
     gap: 30px;
+    margin-bottom: 1.5%;
 }
 
 h1,
@@ -74,13 +79,13 @@ h3 {
 }
 
 h1 {
-    font-size: 10rem;
-    -webkit-text-stroke: 4px var(--poke-blue);
+    font-size: clamp(8rem, 10vw, 10rem);
+    -webkit-text-stroke: clamp(2px, 1vw, 4px) var(--poke-blue);
 }
 
 h2 {
-    font-size: 5rem;
-    -webkit-text-stroke: 3px var(--poke-blue);
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    -webkit-text-stroke: clamp(2px, 0.5vw, 3px) var(--poke-blue);
 }
 
 h3 {
@@ -91,13 +96,13 @@ h3 {
 p {
     margin: 0;
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--poke-white);
 }
 
 .disclaimer {
     margin: 0;
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--poke-black);
 }
