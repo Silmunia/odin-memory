@@ -194,9 +194,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Best Readme Template](https://github.com/othneildrew/Best-README-Template): provider of the template used to write this project's Readme document
+* [Nintendo Company](https://www.nintendo.com): the rightful owner of the Pokémon trademark
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
