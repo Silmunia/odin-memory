@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Odin Memory</h1>
+      <h1>Poké-Memory</h1>
       <CardContainer />
     </>
   )
