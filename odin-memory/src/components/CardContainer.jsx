@@ -54,7 +54,7 @@ function CardContainer() {
         const cardData = [];
 
         for (let i = 0; i < cardNumber; i++) {
-            const randomId = Math.ceil(Math.random() * 300);
+            const randomId = Math.ceil(Math.random() * 493);
 
             const fetchResult = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
 
