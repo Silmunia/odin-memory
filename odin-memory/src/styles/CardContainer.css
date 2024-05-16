@@ -1,0 +1,9 @@
+@import url("./StyleSettings.css");
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: auto;
+}
